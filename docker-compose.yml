@@ -1,6 +1,6 @@
 version: "3"
 services:
-  unicef-api-server:
+  test-api-server:
     image: nodejs
     container_name: test-api-server
     restart: unless-stopped
@@ -14,7 +14,7 @@ services:
     command: npm start
 
 networks:
-  unicef-api-network:
+  test-api-network:
     driver: bridge
 
 volumes:
