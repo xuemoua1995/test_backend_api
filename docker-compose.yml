@@ -1,0 +1,21 @@
+version: "3"
+services:
+  unicef-api-server:
+    image: nodejs
+    container_name: test-api-server
+    restart: unless-stopped
+    build: .
+    ports:
+      - "2020:2020"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - test-api-network
+    command: npm start
+
+networks:
+  unicef-api-network:
+    driver: bridge
+
+volumes:
+  node_modules:
